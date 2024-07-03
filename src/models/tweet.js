@@ -7,6 +7,10 @@ const tweetSchema = new mongoose.Schema({
     },
     email: {
         type: String,
+    },
+    comments: {
+        type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
+        default: []
     }
 })
 
