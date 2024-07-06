@@ -3,16 +3,19 @@ const { default: mongoose } = require("mongoose");
 const tweetSchema = new mongoose.Schema({
     content: {
         type: String,
-        required: true
+        required: true,
+        max: [250,"Tweet cannot be more than 250 words."]
     },
-    email: {
-        type: String,
-    },
-    comments: {
-        type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
-        default: []
+    hashtags:[
+    {        
+        type:{
+            
+        }
     }
+    ]
 })
+
+
 
 const Tweet  = mongoose.model("Tweet", tweetSchema);
 module.exports = Tweet;

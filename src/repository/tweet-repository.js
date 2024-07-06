@@ -49,6 +49,13 @@ class TweetRepository{
             console.log(" Error:- ",error);
         }
     }
+
+    async get(offset,limit){
+        const tweet = Tweet.find().skip(offset).limit(limit);
+        console.log(tweet);
+        return tweet;
+    }
 }
+
 
 module.exports =TweetRepository;
